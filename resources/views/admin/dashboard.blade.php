@@ -11,48 +11,48 @@
                 <p class="mt-1 text-sm text-slate-500">Pantau performa sistem absensi secara menyeluruh.</p>
             </div>
             <div class="flex gap-2">
-                <x-ui-button as="a" href="{{ route('admin.reports.attendance') }}" variant="outline">
+                <x-ui.button as="a" href="{{ route('admin.reports.attendance') }}" variant="outline">
                     Laporan Absensi
-                </x-ui-button>
-                <x-ui-button as="a" href="{{ route('admin.qrcode.display') }}">
+                </x-ui.button>
+                <x-ui.button as="a" href="{{ route('admin.qrcode.display') }}">
                     Tampilkan QR Dinamis
-                </x-ui-button>
+                </x-ui.button>
             </div>
         </div>
 
         <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            <x-ui-card>
-                <x-ui-card-content>
+            <x-ui.card>
+                <x-ui.card-content>
                     <p class="text-sm font-medium text-slate-500">Total Karyawan</p>
                     <p class="mt-2 text-3xl font-semibold text-slate-900">{{ $employeeCount }}</p>
-                </x-ui-card-content>
-            </x-ui-card>
-            <x-ui-card>
-                <x-ui-card-content>
+                </x-ui.card-content>
+            </x-ui.card>
+            <x-ui.card>
+                <x-ui.card-content>
                     <p class="text-sm font-medium text-slate-500">Total Manajer</p>
                     <p class="mt-2 text-3xl font-semibold text-slate-900">{{ $managerCount }}</p>
-                </x-ui-card-content>
-            </x-ui-card>
-            <x-ui-card>
-                <x-ui-card-content>
+                </x-ui.card-content>
+            </x-ui.card>
+            <x-ui.card>
+                <x-ui.card-content>
                     <p class="text-sm font-medium text-slate-500">Pengguna Aktif</p>
                     <p class="mt-2 text-3xl font-semibold text-slate-900">{{ $activeUsers }}</p>
-                </x-ui-card-content>
-            </x-ui-card>
-            <x-ui-card>
-                <x-ui-card-content>
+                </x-ui.card-content>
+            </x-ui.card>
+            <x-ui.card>
+                <x-ui.card-content>
                     <p class="text-sm font-medium text-slate-500">QR Aktif</p>
                     <p class="mt-2 text-3xl font-semibold text-slate-900">{{ $activeQrCodes }}</p>
-                </x-ui-card-content>
-            </x-ui-card>
+                </x-ui.card-content>
+            </x-ui.card>
         </div>
 
         <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
-            <x-ui-card>
-                <x-ui-card-header>
-                    <x-ui-card-title>Rekap Kehadiran Hari Ini</x-ui-card-title>
-                </x-ui-card-header>
-                <x-ui-card-content>
+            <x-ui.card>
+                <x-ui.card-header>
+                    <x-ui.card-title>Rekap Kehadiran Hari Ini</x-ui.card-title>
+                </x-ui.card-header>
+                <x-ui.card-content>
                     <dl class="grid grid-cols-2 gap-4 text-sm">
                         <div>
                             <dt class="text-slate-500">Hadir</dt>
@@ -71,15 +71,15 @@
                             <dd class="text-2xl font-semibold text-rose-600">{{ $attendanceSummary['absent'] }}</dd>
                         </div>
                     </dl>
-                </x-ui-card-content>
-            </x-ui-card>
+                </x-ui.card-content>
+            </x-ui.card>
 
-            <x-ui-card>
-                <x-ui-card-header>
-                    <x-ui-card-title>Pengajuan Izin / Cuti</x-ui-card-title>
-                    <x-ui-card-description>Pengajuan yang menunggu tindakan admin.</x-ui-card-description>
-                </x-ui-card-header>
-                <x-ui-card-content class="space-y-3">
+            <x-ui.card>
+                <x-ui.card-header>
+                    <x-ui.card-title>Pengajuan Izin / Cuti</x-ui.card-title>
+                    <x-ui.card-description>Pengajuan yang menunggu tindakan admin.</x-ui.card-description>
+                </x-ui.card-header>
+                <x-ui.card-content class="space-y-3">
                     @forelse ($pendingLeaveRequests as $request)
                         <div class="rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-sm">
                             <p class="font-medium text-slate-900">{{ $request->user?->name }}</p>
@@ -91,20 +91,20 @@
                     @empty
                         <p class="text-sm text-slate-500">Tidak ada pengajuan menunggu.</p>
                     @endforelse
-                </x-ui-card-content>
-                <x-ui-card-footer>
-                    <x-ui-button as="a" href="{{ route('admin.leave-requests.index') }}" size="sm" variant="ghost">
+                </x-ui.card-content>
+                <x-ui.card-footer>
+                    <x-ui.button as="a" href="{{ route('admin.leave-requests.index') }}" size="sm" variant="ghost">
                         Kelola Pengajuan
-                    </x-ui-button>
-                </x-ui-card-footer>
-            </x-ui-card>
+                    </x-ui.button>
+                </x-ui.card-footer>
+            </x-ui.card>
         </div>
 
-        <x-ui-card>
-            <x-ui-card-header>
-                <x-ui-card-title>Kehadiran Terbaru</x-ui-card-title>
-            </x-ui-card-header>
-            <x-ui-card-content class="p-0">
+        <x-ui.card>
+            <x-ui.card-header>
+                <x-ui.card-title>Kehadiran Terbaru</x-ui.card-title>
+            </x-ui.card-header>
+            <x-ui.card-content class="p-0">
                 <div class="overflow-x-auto">
                     <table class="min-w-full divide-y divide-slate-200">
                         <thead class="bg-slate-50">
@@ -148,7 +148,7 @@
                                                 default => 'Alpa',
                                             };
                                         @endphp
-                                        <x-ui-badge :variant="$variant">{{ $label }}</x-ui-badge>
+                                        <x-ui.badge :variant="$variant">{{ $label }}</x-ui.badge>
                                     </td>
                                 </tr>
                             @empty
@@ -161,8 +161,8 @@
                         </tbody>
                     </table>
                 </div>
-            </x-ui-card-content>
-        </x-ui-card>
+            </x-ui.card-content>
+        </x-ui.card>
     </div>
 </div>
 @endsection

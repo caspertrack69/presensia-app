@@ -10,8 +10,8 @@
             <p class="mt-1 text-sm text-slate-500">Lengkapi formulir berikut untuk mengajukan izin atau cuti.</p>
         </div>
 
-        <x-ui-card>
-            <x-ui-card-content>
+        <x-ui.card>
+            <x-ui.card-content>
                 <form method="POST" action="{{ route('employee.leave-requests.store') }}" enctype="multipart/form-data" class="space-y-6">
                     @csrf
 
@@ -65,16 +65,16 @@
                     </div>
 
                     <div class="flex flex-col gap-3 sm:flex-row sm:justify-end">
-                        <x-ui-button as="a" href="{{ route('employee.leave-requests.index') }}" variant="ghost">
+                        <x-ui.button as="a" href="{{ route('employee.leave-requests.index') }}" variant="ghost">
                             Batal
-                        </x-ui-button>
-                        <x-ui-button type="submit">
+                        </x-ui.button>
+                        <x-ui.button type="submit">
                             Kirim Pengajuan
-                        </x-ui-button>
+                        </x-ui.button>
                     </div>
                 </form>
-            </x-ui-card-content>
-        </x-ui-card>
+            </x-ui.card-content>
+        </x-ui.card>
     </div>
 </div>
 @endsection

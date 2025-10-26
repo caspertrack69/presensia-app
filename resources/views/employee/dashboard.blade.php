@@ -11,14 +11,14 @@
                 <p class="mt-1 text-sm text-slate-500">Ringkasan kehadiran dan aksi cepat tersedia di sini.</p>
             </div>
             <div class="flex items-center gap-3">
-                <x-ui-button as="a" href="{{ route('employee.attendance.scanner') }}" variant="primary">
+                <x-ui.button as="a" href="{{ route('employee.attendance.scanner') }}" variant="primary">
                     Buka Scanner QR
-                </x-ui-button>
+                </x-ui.button>
                 <form action="{{ route('logout') }}" method="POST">
                     @csrf
-                    <x-ui-button type="submit" variant="outline">
+                    <x-ui.button type="submit" variant="outline">
                         Logout
-                    </x-ui-button>
+                    </x-ui.button>
                 </form>
             </div>
         </div>
@@ -32,12 +32,12 @@
         @endif
 
         <div class="grid grid-cols-1 gap-6 lg:grid-cols-3">
-            <x-ui-card class="lg:col-span-2">
-                <x-ui-card-header>
-                    <x-ui-card-title>Absensi Hari Ini</x-ui-card-title>
-                    <x-ui-card-description>Pastikan Anda melakukan check-in dan check-out tepat waktu.</x-ui-card-description>
-                </x-ui-card-header>
-                <x-ui-card-content class="grid grid-cols-1 gap-6 md:grid-cols-2">
+            <x-ui.card class="lg:col-span-2">
+                <x-ui.card-header>
+                    <x-ui.card-title>Absensi Hari Ini</x-ui.card-title>
+                    <x-ui.card-description>Pastikan Anda melakukan check-in dan check-out tepat waktu.</x-ui.card-description>
+                </x-ui.card-header>
+                <x-ui.card-content class="grid grid-cols-1 gap-6 md:grid-cols-2">
                     <div class="rounded-xl border border-slate-200 bg-slate-50 px-5 py-6">
                         <p class="text-sm font-medium text-slate-500">Check-in</p>
                         <p class="mt-2 text-3xl font-semibold text-slate-900">
@@ -61,30 +61,30 @@
                         </p>
                         <div class="mt-3">
                             @if ($todayAttendance && !$todayAttendance->check_out)
-                                <x-ui-button as="a" href="{{ route('employee.attendance.scanner') }}" size="sm">
+                                <x-ui.button as="a" href="{{ route('employee.attendance.scanner') }}" size="sm">
                                     Check-out Sekarang
-                                </x-ui-button>
+                                </x-ui.button>
                             @elseif(!$todayAttendance)
                                 <p class="text-xs text-slate-500">Lakukan check-in terlebih dahulu.</p>
                             @endif
                         </div>
                     </div>
-                </x-ui-card-content>
-                <x-ui-card-footer>
+                </x-ui.card-content>
+                <x-ui.card-footer>
                     @if (!$todayAttendance)
-                        <x-ui-button as="a" href="{{ route('employee.attendance.scanner') }}">
+                        <x-ui.button as="a" href="{{ route('employee.attendance.scanner') }}">
                             Check-in Sekarang
-                        </x-ui-button>
+                        </x-ui.button>
                     @endif
-                </x-ui-card-footer>
-            </x-ui-card>
+                </x-ui.card-footer>
+            </x-ui.card>
 
             <div class="space-y-4">
-                <x-ui-card>
-                    <x-ui-card-header>
-                        <x-ui-card-title>Statistik Bulan Ini</x-ui-card-title>
-                    </x-ui-card-header>
-                    <x-ui-card-content>
+                <x-ui.card>
+                    <x-ui.card-header>
+                        <x-ui.card-title>Statistik Bulan Ini</x-ui.card-title>
+                    </x-ui.card-header>
+                    <x-ui.card-content>
                         <dl class="space-y-3">
                             <div class="flex items-center justify-between">
                                 <dt class="text-sm text-slate-500">Total Hadir</dt>
@@ -107,33 +107,33 @@
                                 <dd class="text-base font-semibold text-rose-600">{{ $summary['absent'] }}</dd>
                             </div>
                         </dl>
-                    </x-ui-card-content>
-                </x-ui-card>
+                    </x-ui.card-content>
+                </x-ui.card>
 
-                <x-ui-card>
-                    <x-ui-card-header>
-                        <x-ui-card-title>Aksi Cepat</x-ui-card-title>
-                    </x-ui-card-header>
-                    <x-ui-card-content class="space-y-3">
-                        <x-ui-button as="a" href="{{ route('employee.leave-requests.create') }}" class="w-full">
+                <x-ui.card>
+                    <x-ui.card-header>
+                        <x-ui.card-title>Aksi Cepat</x-ui.card-title>
+                    </x-ui.card-header>
+                    <x-ui.card-content class="space-y-3">
+                        <x-ui.button as="a" href="{{ route('employee.leave-requests.create') }}" class="w-full">
                             Ajukan Izin / Cuti
-                        </x-ui-button>
-                        <x-ui-button as="a" href="{{ route('employee.leave-requests.index') }}" variant="outline" class="w-full">
+                        </x-ui.button>
+                        <x-ui.button as="a" href="{{ route('employee.leave-requests.index') }}" variant="outline" class="w-full">
                             Lihat Pengajuan Saya
-                        </x-ui-button>
-                        <x-ui-button as="a" href="{{ route('employee.attendance.history') }}" variant="ghost" class="w-full">
+                        </x-ui.button>
+                        <x-ui.button as="a" href="{{ route('employee.attendance.history') }}" variant="ghost" class="w-full">
                             Riwayat Absensi
-                        </x-ui-button>
-                    </x-ui-card-content>
-                </x-ui-card>
+                        </x-ui.button>
+                    </x-ui.card-content>
+                </x-ui.card>
             </div>
         </div>
 
-        <x-ui-card>
-            <x-ui-card-header>
-                <x-ui-card-title>Riwayat Absensi Terbaru</x-ui-card-title>
-            </x-ui-card-header>
-            <x-ui-card-content class="p-0">
+        <x-ui.card>
+            <x-ui.card-header>
+                <x-ui.card-title>Riwayat Absensi Terbaru</x-ui.card-title>
+            </x-ui.card-header>
+            <x-ui.card-content class="p-0">
                 <div class="overflow-x-auto">
                     <table class="min-w-full divide-y divide-slate-200">
                         <thead class="bg-slate-50">
@@ -173,7 +173,7 @@
                                                 default => 'Alpa',
                                             };
                                         @endphp
-                                        <x-ui-badge :variant="$badgeVariant">{{ $label }}</x-ui-badge>
+                                        <x-ui.badge :variant="$badgeVariant">{{ $label }}</x-ui.badge>
                                     </td>
                                 </tr>
                             @empty
@@ -186,13 +186,13 @@
                         </tbody>
                     </table>
                 </div>
-            </x-ui-card-content>
-            <x-ui-card-footer class="justify-end">
-                <x-ui-button as="a" href="{{ route('employee.attendance.history') }}" size="sm" variant="ghost">
+            </x-ui.card-content>
+            <x-ui.card-footer class="justify-end">
+                <x-ui.button as="a" href="{{ route('employee.attendance.history') }}" size="sm" variant="ghost">
                     Lihat Riwayat Lengkap
-                </x-ui-button>
-            </x-ui-card-footer>
-        </x-ui-card>
+                </x-ui.button>
+            </x-ui.card-footer>
+        </x-ui.card>
     </main>
 </div>
 @endsection

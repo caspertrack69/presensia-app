@@ -10,13 +10,13 @@
                 <h1 class="text-2xl font-semibold text-slate-900">Manajemen Pengguna</h1>
                 <p class="mt-1 text-sm text-slate-500">Kelola akun karyawan, manajer, dan admin.</p>
             </div>
-            <x-ui-button as="a" href="{{ route('admin.users.create') }}">
+            <x-ui.button as="a" href="{{ route('admin.users.create') }}">
                 Tambah Pengguna
-            </x-ui-button>
+            </x-ui.button>
         </div>
 
-        <x-ui-card>
-            <x-ui-card-content>
+        <x-ui.card>
+            <x-ui.card-content>
                 <form method="GET" class="grid grid-cols-1 gap-4 md:grid-cols-4 md:items-end">
                     <div class="md:col-span-2 space-y-2">
                         <label for="search" class="text-sm font-medium text-slate-700">Pencarian</label>
@@ -32,17 +32,17 @@
                         </select>
                     </div>
                     <div class="flex gap-2">
-                        <x-ui-button type="submit" class="flex-1">Cari</x-ui-button>
-                        <x-ui-button as="a" href="{{ route('admin.users.index') }}" variant="outline" class="flex-1">
+                        <x-ui.button type="submit" class="flex-1">Cari</x-ui.button>
+                        <x-ui.button as="a" href="{{ route('admin.users.index') }}" variant="outline" class="flex-1">
                             Reset
-                        </x-ui-button>
+                        </x-ui.button>
                     </div>
                 </form>
-            </x-ui-card-content>
-        </x-ui-card>
+            </x-ui.card-content>
+        </x-ui.card>
 
-        <x-ui-card>
-            <x-ui-card-content class="p-0">
+        <x-ui.card>
+            <x-ui.card-content class="p-0">
                 <div class="overflow-x-auto">
                     <table class="min-w-full divide-y divide-slate-200">
                         <thead class="bg-slate-50">
@@ -69,20 +69,20 @@
                                     </td>
                                     <td class="whitespace-nowrap px-6 py-4 text-sm">
                                         @if ($user->is_active)
-                                            <x-ui-badge variant="success">Aktif</x-ui-badge>
+                                            <x-ui.badge variant="success">Aktif</x-ui.badge>
                                         @else
-                                            <x-ui-badge variant="muted">Nonaktif</x-ui-badge>
+                                            <x-ui.badge variant="muted">Nonaktif</x-ui.badge>
                                         @endif
                                     </td>
                                     <td class="whitespace-nowrap px-6 py-4 text-right text-sm">
                                         <div class="flex justify-end gap-2">
-                                            <x-ui-button as="a" href="{{ route('admin.users.edit', $user) }}" size="sm" variant="ghost">
+                                            <x-ui.button as="a" href="{{ route('admin.users.edit', $user) }}" size="sm" variant="ghost">
                                                 Ubah
-                                            </x-ui-button>
+                                            </x-ui.button>
                                             <form method="POST" action="{{ route('admin.users.destroy', $user) }}" onsubmit="return confirm('Hapus pengguna ini?');">
                                                 @csrf
                                                 @method('DELETE')
-                                                <x-ui-button type="submit" size="sm" variant="destructive">Hapus</x-ui-button>
+                                                <x-ui.button type="submit" size="sm" variant="destructive">Hapus</x-ui.button>
                                             </form>
                                         </div>
                                     </td>
@@ -97,12 +97,12 @@
                         </tbody>
                     </table>
                 </div>
-            </x-ui-card-content>
-            <x-ui-card-footer class="justify-between">
+            </x-ui.card-content>
+            <x-ui.card-footer class="justify-between">
                 <p class="text-sm text-slate-500">Total pengguna: {{ $users->total() }}</p>
                 {{ $users->links() }}
-            </x-ui-card-footer>
-        </x-ui-card>
+            </x-ui.card-footer>
+        </x-ui.card>
     </div>
 </div>
 @endsection

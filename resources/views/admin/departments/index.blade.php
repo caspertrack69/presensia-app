@@ -10,9 +10,9 @@
                 <h1 class="text-2xl font-semibold text-slate-900">Departemen</h1>
                 <p class="mt-1 text-sm text-slate-500">Kelola departemen, lokasi kerja, dan kepala divisi.</p>
             </div>
-            <x-ui-button as="a" href="{{ route('admin.departments.create') }}">
+            <x-ui.button as="a" href="{{ route('admin.departments.create') }}">
                 Tambah Departemen
-            </x-ui-button>
+            </x-ui.button>
         </div>
 
         @if (session('status'))
@@ -27,8 +27,8 @@
             </div>
         @endif
 
-        <x-ui-card>
-            <x-ui-card-content class="p-0">
+        <x-ui.card>
+            <x-ui.card-content class="p-0">
                 <div class="overflow-x-auto">
                     <table class="min-w-full divide-y divide-slate-200">
                         <thead class="bg-slate-50">
@@ -53,22 +53,22 @@
                                     </td>
                                     <td class="whitespace-nowrap px-6 py-4 text-sm">
                                         @if ($department->is_active)
-                                            <x-ui-badge variant="success">Aktif</x-ui-badge>
+                                            <x-ui.badge variant="success">Aktif</x-ui.badge>
                                         @else
-                                            <x-ui-badge variant="muted">Nonaktif</x-ui-badge>
+                                            <x-ui.badge variant="muted">Nonaktif</x-ui.badge>
                                         @endif
                                     </td>
                                     <td class="whitespace-nowrap px-6 py-4 text-right text-sm">
                                         <div class="flex justify-end gap-2">
-                                            <x-ui-button as="a" href="{{ route('admin.departments.edit', $department) }}" size="sm" variant="ghost">
+                                            <x-ui.button as="a" href="{{ route('admin.departments.edit', $department) }}" size="sm" variant="ghost">
                                                 Ubah
-                                            </x-ui-button>
+                                            </x-ui.button>
                                             <form method="POST" action="{{ route('admin.departments.destroy', $department) }}" onsubmit="return confirm('Hapus departemen ini?');">
                                                 @csrf
                                                 @method('DELETE')
-                                                <x-ui-button type="submit" size="sm" variant="destructive">
+                                                <x-ui.button type="submit" size="sm" variant="destructive">
                                                     Hapus
-                                                </x-ui-button>
+                                                </x-ui.button>
                                             </form>
                                         </div>
                                     </td>
@@ -83,12 +83,12 @@
                         </tbody>
                     </table>
                 </div>
-            </x-ui-card-content>
-            <x-ui-card-footer class="justify-between">
+            </x-ui.card-content>
+            <x-ui.card-footer class="justify-between">
                 <p class="text-sm text-slate-500">Total departemen: {{ $departments->total() }}</p>
                 {{ $departments->links() }}
-            </x-ui-card-footer>
-        </x-ui-card>
+            </x-ui.card-footer>
+        </x-ui.card>
     </div>
 </div>
 @endsection

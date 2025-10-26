@@ -12,8 +12,8 @@
             </div>
         </div>
 
-        <x-ui-card>
-            <x-ui-card-content>
+        <x-ui.card>
+            <x-ui.card-content>
                 <form method="GET" class="grid grid-cols-1 gap-4 md:grid-cols-4 md:items-end">
                     <div class="md:col-span-2 space-y-2">
                         <label for="start_date" class="text-sm font-medium text-slate-700">Tanggal Mulai</label>
@@ -24,20 +24,20 @@
                         <input id="end_date" type="date" name="end_date" value="{{ $endDate }}" class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-200">
                     </div>
                     <div class="flex gap-2">
-                        <x-ui-button type="submit" class="flex-1">Terapkan</x-ui-button>
-                        <x-ui-button as="a"
+                        <x-ui.button type="submit" class="flex-1">Terapkan</x-ui.button>
+                        <x-ui.button as="a"
                                      href="{{ route('manager.reports.attendance.export', ['start_date' => $startDate, 'end_date' => $endDate]) }}"
                                      variant="outline"
                                      class="flex-1">
                             Unduh CSV
-                        </x-ui-button>
+                        </x-ui.button>
                     </div>
                 </form>
-            </x-ui-card-content>
-        </x-ui-card>
+            </x-ui.card-content>
+        </x-ui.card>
 
-        <x-ui-card>
-            <x-ui-card-content class="p-0">
+        <x-ui.card>
+            <x-ui.card-content class="p-0">
                 <div class="overflow-x-auto">
                     <table class="min-w-full divide-y divide-slate-200">
                         <thead class="bg-slate-50">
@@ -77,7 +77,7 @@
                                                 default => 'Alpa',
                                             };
                                         @endphp
-                                        <x-ui-badge :variant="$variant">{{ $label }}</x-ui-badge>
+                                        <x-ui.badge :variant="$variant">{{ $label }}</x-ui.badge>
                                     </td>
                                 </tr>
                             @empty
@@ -90,12 +90,12 @@
                         </tbody>
                     </table>
                 </div>
-            </x-ui-card-content>
-            <x-ui-card-footer class="justify-between">
+            </x-ui.card-content>
+            <x-ui.card-footer class="justify-between">
                 <p class="text-sm text-slate-500">Total data: {{ $attendances->total() }}</p>
                 {{ $attendances->links() }}
-            </x-ui-card-footer>
-        </x-ui-card>
+            </x-ui.card-footer>
+        </x-ui.card>
     </div>
 </div>
 @endsection

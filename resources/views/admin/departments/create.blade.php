@@ -10,13 +10,13 @@
                 <h1 class="text-2xl font-semibold text-slate-900">Tambah Departemen</h1>
                 <p class="mt-1 text-sm text-slate-500">Definisikan departemen baru beserta kepala divisinya.</p>
             </div>
-            <x-ui-button as="a" href="{{ route('admin.departments.index') }}" variant="outline">
+            <x-ui.button as="a" href="{{ route('admin.departments.index') }}" variant="outline">
                 Kembali
-            </x-ui-button>
+            </x-ui.button>
         </div>
 
-        <x-ui-card>
-            <x-ui-card-content>
+        <x-ui.card>
+            <x-ui.card-content>
                 <form method="POST" action="{{ route('admin.departments.store') }}" class="space-y-6">
                     @csrf
 
@@ -78,16 +78,16 @@
                     </div>
 
                     <div class="flex justify-end gap-3">
-                        <x-ui-button as="a" href="{{ route('admin.departments.index') }}" variant="ghost">
+                        <x-ui.button as="a" href="{{ route('admin.departments.index') }}" variant="ghost">
                             Batal
-                        </x-ui-button>
-                        <x-ui-button type="submit">
+                        </x-ui.button>
+                        <x-ui.button type="submit">
                             Simpan Departemen
-                        </x-ui-button>
+                        </x-ui.button>
                     </div>
                 </form>
-            </x-ui-card-content>
-        </x-ui-card>
+            </x-ui.card-content>
+        </x-ui.card>
     </div>
 </div>
 @endsection

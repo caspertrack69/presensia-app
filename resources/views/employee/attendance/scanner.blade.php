@@ -49,9 +49,9 @@
                         </svg>
                         <h2 class="text-2xl font-semibold">Gagal</h2>
                         <p class="mt-3 text-sm" x-text="errorMessage"></p>
-                        <x-ui-button class="mt-5" @click="resetScanner()" variant="outline">
+                        <x-ui.button class="mt-5" @click="resetScanner()" variant="outline">
                             Coba Lagi
-                        </x-ui-button>
+                        </x-ui.button>
                     </div>
 
                     <div
@@ -68,12 +68,12 @@
 
             <div class="space-y-4 p-6">
                 <div class="flex flex-col gap-3 md:flex-row">
-                    <x-ui-button class="flex-1" @click="processCheckIn()" :disabled="!qrData || loading">
+                    <x-ui.button class="flex-1" @click="processCheckIn()" :disabled="!qrData || loading">
                         Check-in
-                    </x-ui-button>
-                    <x-ui-button class="flex-1" variant="secondary" @click="processCheckOut()" :disabled="!qrData || loading">
+                    </x-ui.button>
+                    <x-ui.button class="flex-1" variant="secondary" @click="processCheckOut()" :disabled="!qrData || loading">
                         Check-out
-                    </x-ui-button>
+                    </x-ui.button>
                 </div>
 
                 <div class="rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-600">
@@ -86,9 +86,9 @@
                     </ul>
                 </div>
 
-                <x-ui-button as="a" href="{{ route('employee.dashboard') }}" variant="ghost" class="w-full">
+                <x-ui.button as="a" href="{{ route('employee.dashboard') }}" variant="ghost" class="w-full">
                     Kembali ke Dashboard
-                </x-ui-button>
+                </x-ui.button>
             </div>
         </div>
     </div>

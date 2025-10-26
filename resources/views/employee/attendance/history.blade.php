@@ -10,13 +10,13 @@
                 <h1 class="text-2xl font-semibold text-slate-900">Riwayat Absensi</h1>
                 <p class="mt-1 text-sm text-slate-500">Lihat catatan kehadiran Anda secara lengkap.</p>
             </div>
-            <x-ui-button as="a" href="{{ route('employee.dashboard') }}" variant="outline">
+            <x-ui.button as="a" href="{{ route('employee.dashboard') }}" variant="outline">
                 Kembali ke Dashboard
-            </x-ui-button>
+            </x-ui.button>
         </div>
 
-        <x-ui-card>
-            <x-ui-card-content class="p-0">
+        <x-ui.card>
+            <x-ui.card-content class="p-0">
                 <div class="overflow-x-auto">
                     <table class="min-w-full divide-y divide-slate-200">
                         <thead class="bg-slate-50">
@@ -57,7 +57,7 @@
                                                 default => 'Alpa',
                                             };
                                         @endphp
-                                        <x-ui-badge :variant="$badgeVariant">{{ $label }}</x-ui-badge>
+                                        <x-ui.badge :variant="$badgeVariant">{{ $label }}</x-ui.badge>
                                     </td>
                                     <td class="px-6 py-4 text-sm text-slate-600">
                                         {{ $attendance->notes ?: '-' }}
@@ -73,17 +73,17 @@
                         </tbody>
                     </table>
                 </div>
-            </x-ui-card-content>
+            </x-ui.card-content>
 
-            <x-ui-card-footer class="justify-between">
+            <x-ui.card-footer class="justify-between">
                 <p class="text-sm text-slate-500">
                     Total catatan: {{ $attendances->total() }}
                 </p>
                 <div>
                     {{ $attendances->links() }}
                 </div>
-            </x-ui-card-footer>
-        </x-ui-card>
+            </x-ui.card-footer>
+        </x-ui.card>
     </div>
 </div>
 @endsection

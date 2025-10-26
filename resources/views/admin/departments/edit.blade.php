@@ -10,13 +10,13 @@
                 <h1 class="text-2xl font-semibold text-slate-900">Edit Departemen</h1>
                 <p class="mt-1 text-sm text-slate-500">Perbarui informasi departemen {{ $department->name }}.</p>
             </div>
-            <x-ui-button as="a" href="{{ route('admin.departments.index') }}" variant="outline">
+            <x-ui.button as="a" href="{{ route('admin.departments.index') }}" variant="outline">
                 Kembali
-            </x-ui-button>
+            </x-ui.button>
         </div>
 
-        <x-ui-card>
-            <x-ui-card-content>
+        <x-ui.card>
+            <x-ui.card-content>
                 <form method="POST" action="{{ route('admin.departments.update', $department) }}" class="space-y-6">
                     @csrf
                     @method('PUT')
@@ -79,16 +79,16 @@
                     </div>
 
                     <div class="flex justify-end gap-3">
-                        <x-ui-button as="a" href="{{ route('admin.departments.index') }}" variant="ghost">
+                        <x-ui.button as="a" href="{{ route('admin.departments.index') }}" variant="ghost">
                             Batal
-                        </x-ui-button>
-                        <x-ui-button type="submit">
+                        </x-ui.button>
+                        <x-ui.button type="submit">
                             Simpan Perubahan
-                        </x-ui-button>
+                        </x-ui.button>
                     </div>
                 </form>
-            </x-ui-card-content>
-        </x-ui-card>
+            </x-ui.card-content>
+        </x-ui.card>
     </div>
 </div>
 @endsection

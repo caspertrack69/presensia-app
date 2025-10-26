@@ -20,7 +20,7 @@
                         <option value="">Belum ada departemen</option>
                     @endforelse
                 </select>
-                <x-ui-button type="submit" variant="secondary">Terapkan</x-ui-button>
+                <x-ui.button type="submit" variant="secondary">Terapkan</x-ui.button>
             </form>
         </div>
 
@@ -30,23 +30,23 @@
             </div>
         @else
             <div class="grid grid-cols-1 gap-6 lg:grid-cols-3">
-                <x-ui-card>
-                    <x-ui-card-header>
-                        <x-ui-card-title>{{ $selectedDepartment->name }}</x-ui-card-title>
-                        <x-ui-card-description>Total anggota aktif di tim ini.</x-ui-card-description>
-                    </x-ui-card-header>
-                    <x-ui-card-content>
+                <x-ui.card>
+                    <x-ui.card-header>
+                        <x-ui.card-title>{{ $selectedDepartment->name }}</x-ui.card-title>
+                        <x-ui.card-description>Total anggota aktif di tim ini.</x-ui.card-description>
+                    </x-ui.card-header>
+                    <x-ui.card-content>
                         <p class="text-4xl font-semibold text-slate-900">{{ $selectedDepartment->users->count() }}</p>
                         <p class="mt-2 text-xs text-slate-500">Termasuk karyawan dengan status aktif.</p>
-                    </x-ui-card-content>
-                </x-ui-card>
+                    </x-ui.card-content>
+                </x-ui.card>
 
-                <x-ui-card>
-                    <x-ui-card-header>
-                        <x-ui-card-title>Rekap Hari Ini</x-ui-card-title>
-                        <x-ui-card-description>Status kehadiran tim pada {{ now()->translatedFormat('d F Y') }}.</x-ui-card-description>
-                    </x-ui-card-header>
-                    <x-ui-card-content>
+                <x-ui.card>
+                    <x-ui.card-header>
+                        <x-ui.card-title>Rekap Hari Ini</x-ui.card-title>
+                        <x-ui.card-description>Status kehadiran tim pada {{ now()->translatedFormat('d F Y') }}.</x-ui.card-description>
+                    </x-ui.card-header>
+                    <x-ui.card-content>
                         <dl class="grid grid-cols-2 gap-4 text-sm">
                             <div>
                                 <dt class="text-slate-500">Hadir</dt>
@@ -65,15 +65,15 @@
                                 <dd class="text-xl font-semibold text-rose-600">{{ $attendanceStats['absent'] }}</dd>
                             </div>
                         </dl>
-                    </x-ui-card-content>
-                </x-ui-card>
+                    </x-ui.card-content>
+                </x-ui.card>
 
-                <x-ui-card>
-                    <x-ui-card-header>
-                        <x-ui-card-title>Pengajuan Menunggu</x-ui-card-title>
-                        <x-ui-card-description>Permintaan izin/cuti terbaru dari anggota tim.</x-ui-card-description>
-                    </x-ui-card-header>
-                    <x-ui-card-content class="space-y-3">
+                <x-ui.card>
+                    <x-ui.card-header>
+                        <x-ui.card-title>Pengajuan Menunggu</x-ui.card-title>
+                        <x-ui.card-description>Permintaan izin/cuti terbaru dari anggota tim.</x-ui.card-description>
+                    </x-ui.card-header>
+                    <x-ui.card-content class="space-y-3">
                         @forelse ($recentLeaveRequests as $request)
                             <div class="rounded-lg border border-slate-200 bg-slate-50 px-3 py-2">
                                 <p class="text-sm font-medium text-slate-900">{{ $request->user?->name }}</p>
@@ -85,20 +85,20 @@
                         @empty
                             <p class="text-sm text-slate-500">Tidak ada pengajuan menunggu.</p>
                         @endforelse
-                    </x-ui-card-content>
-                    <x-ui-card-footer>
-                        <x-ui-button as="a" href="{{ route('manager.leave-requests.index') }}" size="sm" variant="ghost">
+                    </x-ui.card-content>
+                    <x-ui.card-footer>
+                        <x-ui.button as="a" href="{{ route('manager.leave-requests.index') }}" size="sm" variant="ghost">
                             Kelola Pengajuan
-                        </x-ui-button>
-                    </x-ui-card-footer>
-                </x-ui-card>
+                        </x-ui.button>
+                    </x-ui.card-footer>
+                </x-ui.card>
             </div>
 
-            <x-ui-card>
-                <x-ui-card-header>
-                    <x-ui-card-title>Kehadiran Hari Ini</x-ui-card-title>
-                </x-ui-card-header>
-                <x-ui-card-content class="p-0">
+            <x-ui.card>
+                <x-ui.card-header>
+                    <x-ui.card-title>Kehadiran Hari Ini</x-ui.card-title>
+                </x-ui.card-header>
+                <x-ui.card-content class="p-0">
                     <div class="overflow-x-auto">
                         <table class="min-w-full divide-y divide-slate-200">
                             <thead class="bg-slate-50">
@@ -135,7 +135,7 @@
                                                     default => 'Alpa',
                                                 };
                                             @endphp
-                                            <x-ui-badge :variant="$variant">{{ $label }}</x-ui-badge>
+                                            <x-ui.badge :variant="$variant">{{ $label }}</x-ui.badge>
                                         </td>
                                     </tr>
                                 @empty
@@ -148,8 +148,8 @@
                             </tbody>
                         </table>
                     </div>
-                </x-ui-card-content>
-            </x-ui-card>
+                </x-ui.card-content>
+            </x-ui.card>
         @endif
     </div>
 </div>

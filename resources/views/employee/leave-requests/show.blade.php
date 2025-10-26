@@ -10,16 +10,16 @@
                 <h1 class="text-2xl font-semibold text-slate-900">Detail Pengajuan</h1>
                 <p class="mt-1 text-sm text-slate-500">Informasi lengkap terkait pengajuan izin / cuti Anda.</p>
             </div>
-            <x-ui-button as="a" href="{{ route('employee.leave-requests.index') }}" variant="outline">
+            <x-ui.button as="a" href="{{ route('employee.leave-requests.index') }}" variant="outline">
                 Kembali
-            </x-ui-button>
+            </x-ui.button>
         </div>
 
-        <x-ui-card>
-            <x-ui-card-header>
-                <x-ui-card-title>Status Pengajuan</x-ui-card-title>
-            </x-ui-card-header>
-            <x-ui-card-content class="space-y-4">
+        <x-ui.card>
+            <x-ui.card-header>
+                <x-ui.card-title>Status Pengajuan</x-ui.card-title>
+            </x-ui.card-header>
+            <x-ui.card-content class="space-y-4">
                 @php
                     $statusVariant = match($leaveRequest->status) {
                         'approved' => 'success',
@@ -35,7 +35,7 @@
                     };
                 @endphp
 
-                <x-ui-badge :variant="$statusVariant">{{ $statusLabel }}</x-ui-badge>
+                <x-ui.badge :variant="$statusVariant">{{ $statusLabel }}</x-ui.badge>
 
                 <dl class="grid grid-cols-1 gap-4 sm:grid-cols-2">
                     <div>
@@ -70,20 +70,20 @@
                     <div>
                         <dt class="text-sm font-medium text-slate-500">Lampiran</dt>
                         <dd class="mt-2">
-                            <x-ui-button as="a" href="{{ Storage::url($leaveRequest->attachment) }}" target="_blank" variant="outline" size="sm">
+                            <x-ui.button as="a" href="{{ Storage::url($leaveRequest->attachment) }}" target="_blank" variant="outline" size="sm">
                                 Lihat Lampiran
-                            </x-ui-button>
+                            </x-ui.button>
                         </dd>
                     </div>
                 @endif
-            </x-ui-card-content>
-        </x-ui-card>
+            </x-ui.card-content>
+        </x-ui.card>
 
-        <x-ui-card>
-            <x-ui-card-header>
-                <x-ui-card-title>Riwayat Persetujuan</x-ui-card-title>
-            </x-ui-card-header>
-            <x-ui-card-content class="space-y-4">
+        <x-ui.card>
+            <x-ui.card-header>
+                <x-ui.card-title>Riwayat Persetujuan</x-ui.card-title>
+            </x-ui.card-header>
+            <x-ui.card-content class="space-y-4">
                 <div class="space-y-2 rounded-lg border border-slate-200 bg-slate-50 px-4 py-3">
                     <p class="text-sm font-medium text-slate-700">Persetujuan Manajer</p>
                     <p class="text-sm text-slate-600">
@@ -125,8 +125,8 @@
                         </p>
                     @endif
                 </div>
-            </x-ui-card-content>
-        </x-ui-card>
+            </x-ui.card-content>
+        </x-ui.card>
     </div>
 </div>
 @endsection

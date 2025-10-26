@@ -10,9 +10,9 @@
                 <h1 class="text-2xl font-semibold text-slate-900">Pengajuan Izin / Cuti</h1>
                 <p class="mt-1 text-sm text-slate-500">Kelola dan lacak status pengajuan Anda.</p>
             </div>
-            <x-ui-button as="a" href="{{ route('employee.leave-requests.create') }}">
+            <x-ui.button as="a" href="{{ route('employee.leave-requests.create') }}">
                 Ajukan Pengajuan Baru
-            </x-ui-button>
+            </x-ui.button>
         </div>
 
         @if (session('status'))
@@ -21,8 +21,8 @@
             </div>
         @endif
 
-        <x-ui-card>
-            <x-ui-card-content class="p-0">
+        <x-ui.card>
+            <x-ui.card-content class="p-0">
                 <div class="overflow-x-auto">
                     <table class="min-w-full divide-y divide-slate-200">
                         <thead class="bg-slate-50">
@@ -72,12 +72,12 @@
                                                 default => 'Menunggu',
                                             };
                                         @endphp
-                                        <x-ui-badge :variant="$badgeVariant">{{ $label }}</x-ui-badge>
+                                        <x-ui.badge :variant="$badgeVariant">{{ $label }}</x-ui.badge>
                                     </td>
                                     <td class="whitespace-nowrap px-6 py-4 text-right text-sm">
-                                        <x-ui-button as="a" href="{{ route('employee.leave-requests.show', $request) }}" size="sm" variant="ghost">
+                                        <x-ui.button as="a" href="{{ route('employee.leave-requests.show', $request) }}" size="sm" variant="ghost">
                                             Detail
-                                        </x-ui-button>
+                                        </x-ui.button>
                                     </td>
                                 </tr>
                             @empty
@@ -90,14 +90,14 @@
                         </tbody>
                     </table>
                 </div>
-            </x-ui-card-content>
-            <x-ui-card-footer class="justify-between">
+            </x-ui.card-content>
+            <x-ui.card-footer class="justify-between">
                 <p class="text-sm text-slate-500">Total pengajuan: {{ $leaveRequests->total() }}</p>
                 <div>
                     {{ $leaveRequests->links() }}
                 </div>
-            </x-ui-card-footer>
-        </x-ui-card>
+            </x-ui.card-footer>
+        </x-ui.card>
     </div>
 </div>
 @endsection

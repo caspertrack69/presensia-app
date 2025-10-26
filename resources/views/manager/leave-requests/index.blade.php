@@ -17,7 +17,7 @@
                     <option value="approved" @selected($statusFilter === 'approved')>Disetujui Admin</option>
                     <option value="rejected" @selected($statusFilter === 'rejected')>Ditolak</option>
                 </select>
-                <x-ui-button type="submit" variant="secondary">Terapkan</x-ui-button>
+                <x-ui.button type="submit" variant="secondary">Terapkan</x-ui.button>
             </form>
         </div>
 
@@ -33,8 +33,8 @@
             </div>
         @endif
 
-        <x-ui-card>
-            <x-ui-card-content class="p-0">
+        <x-ui.card>
+            <x-ui.card-content class="p-0">
                 <div class="overflow-x-auto">
                     <table class="min-w-full divide-y divide-slate-200">
                         <thead class="bg-slate-50">
@@ -75,7 +75,7 @@
                                                 default => 'Menunggu',
                                             };
                                         @endphp
-                                        <x-ui-badge :variant="$statusVariant">{{ $statusLabel }}</x-ui-badge>
+                                        <x-ui.badge :variant="$statusVariant">{{ $statusLabel }}</x-ui.badge>
                                     </td>
                                     <td class="px-6 py-4 text-sm text-slate-600">
                                         <p class="max-w-xs">{{ \Illuminate\Support\Str::limit($request->reason, 100) }}</p>
@@ -85,12 +85,12 @@
                                             <div class="flex justify-end gap-2">
                                                 <form method="POST" action="{{ route('manager.leave-requests.approve', $request) }}">
                                                     @csrf
-                                                    <x-ui-button type="submit" size="sm">Setujui</x-ui-button>
+                                                    <x-ui.button type="submit" size="sm">Setujui</x-ui.button>
                                                 </form>
                                                 <form method="POST" action="{{ route('manager.leave-requests.reject', $request) }}" class="flex items-center gap-2">
                                                     @csrf
                                                     <input type="text" name="notes" placeholder="Catatan" class="w-40 rounded-lg border border-slate-300 px-3 py-1 text-xs focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-200" required>
-                                                    <x-ui-button type="submit" size="sm" variant="destructive">Tolak</x-ui-button>
+                                                    <x-ui.button type="submit" size="sm" variant="destructive">Tolak</x-ui.button>
                                                 </form>
                                             </div>
                                         @elseif($request->status === 'approved_manager')
@@ -110,12 +110,12 @@
                         </tbody>
                     </table>
                 </div>
-            </x-ui-card-content>
-            <x-ui-card-footer class="justify-between">
+            </x-ui.card-content>
+            <x-ui.card-footer class="justify-between">
                 <p class="text-sm text-slate-500">Total data: {{ $leaveRequests->total() }}</p>
                 {{ $leaveRequests->links() }}
-            </x-ui-card-footer>
-        </x-ui-card>
+            </x-ui.card-footer>
+        </x-ui.card>
     </div>
 </div>
 @endsection
