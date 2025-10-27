@@ -64,15 +64,15 @@
 <div class="space-y-20">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="grid gap-12 lg:grid-cols-[minmax(0,420px)_minmax(0,1fr)]">
-            <div class="space-y-6 rounded-3xl bg-white p-8 shadow-xl shadow-blue-500/5 ring-1 ring-slate-100">
+            <div class="space-y-6 rounded-3xl bg-white p-8 shadow-xl shadow-blue-500/5 ring-1 ring-slate-100 dark:bg-slate-900/80 dark:ring-slate-800 dark:shadow-slate-900/40">
                 <div>
-                    <h2 class="text-2xl font-semibold text-slate-900">Masuk ke Presensia</h2>
-                    <p class="mt-2 text-sm text-slate-500">Kelola absensi, cuti, dan produktivitas tim dalam satu dasbor terintegrasi.</p>
+                    <h2 class="text-2xl font-semibold text-slate-900 dark:text-slate-100">Masuk ke Presensia</h2>
+                    <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">Kelola absensi, cuti, dan produktivitas tim dalam satu dasbor terintegrasi.</p>
                 </div>
                 <form method="POST" action="{{ route('login') }}" class="space-y-5">
                     @csrf
                     <div class="space-y-2">
-                        <label for="email" class="text-sm font-medium text-slate-700">Email</label>
+                        <label for="email" class="text-sm font-medium text-slate-700 dark:text-slate-300">Email</label>
                         <input
                             id="email"
                             name="email"
@@ -87,7 +87,7 @@
                         @enderror
                     </div>
                     <div class="space-y-2">
-                        <label for="password" class="text-sm font-medium text-slate-700">Password</label>
+                        <label for="password" class="text-sm font-medium text-slate-700 dark:text-slate-300">Password</label>
                         <input
                             id="password"
                             name="password"
@@ -101,7 +101,7 @@
                         @enderror
                     </div>
                     <div class="flex items-center justify-between text-sm">
-                        <label class="inline-flex items-center gap-2 text-slate-600">
+                        <label class="inline-flex items-center gap-2 text-slate-600 dark:text-slate-300">
                             <input
                                 id="remember"
                                 name="remember"
@@ -120,12 +120,12 @@
                         Masuk Sekarang
                     </button>
                 </form>
-                <p class="text-xs text-slate-400">&copy; {{ now()->year }} Presensia. Tingkatkan disiplin dan produktivitas dengan pengalaman absensi berbasis QR yang terukur.</p>
+                <p class="text-xs text-slate-400 dark:text-slate-500">&copy; {{ now()->year }} Presensia. Tingkatkan disiplin dan produktivitas dengan pengalaman absensi berbasis QR yang terukur.</p>
             </div>
             <div class="space-y-6">
-                <div class="rounded-3xl border border-slate-200 bg-white p-8 shadow-lg shadow-slate-200/60">
-                    <h3 class="text-lg font-semibold text-slate-900">Mengapa Presensia unggul?</h3>
-                    <ul class="mt-4 space-y-4 text-sm text-slate-600">
+                <div class="rounded-3xl border border-slate-200 bg-white p-8 shadow-lg shadow-slate-200/60 dark:border-slate-800 dark:bg-slate-900/70 dark:shadow-slate-900/50">
+                    <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-100">Mengapa Presensia unggul?</h3>
+                    <ul class="mt-4 space-y-4 text-sm text-slate-600 dark:text-slate-300">
                         <li class="flex gap-3">
                             <span class="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-blue-600 text-xs font-semibold text-white">1</span>
                             Analitik absensi otomatis memetakan tren keterlambatan, kehadiran, dan overtime tanpa spreadsheet manual.
@@ -141,47 +141,47 @@
                     </ul>
                 </div>
                 <div class="grid gap-4 sm:grid-cols-2">
-                    <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow">
-                        <p class="text-sm font-medium text-slate-500">Kepuasan HR</p>
-                        <p class="mt-3 text-2xl font-semibold text-slate-900">92%</p>
-                        <p class="mt-2 text-xs text-slate-500">HR merasakan proses payroll lebih cepat dan akurat.</p>
+                    <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow dark:border-slate-800 dark:bg-slate-900/70 dark:shadow-slate-900/40">
+                        <p class="text-sm font-medium text-slate-500 dark:text-slate-400">Kepuasan HR</p>
+                        <p class="mt-3 text-2xl font-semibold text-slate-900 dark:text-slate-100">92%</p>
+                        <p class="mt-2 text-xs text-slate-500 dark:text-slate-500">HR merasakan proses payroll lebih cepat dan akurat.</p>
                     </div>
-                    <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow">
-                        <p class="text-sm font-medium text-slate-500">Waktu Verifikasi</p>
-                        <p class="mt-3 text-2xl font-semibold text-slate-900">-63%</p>
-                        <p class="mt-2 text-xs text-slate-500">Pengurangan waktu verifikasi absensi manual.</p>
+                    <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow dark:border-slate-800 dark:bg-slate-900/70 dark:shadow-slate-900/40">
+                        <p class="text-sm font-medium text-slate-500 dark:text-slate-400">Waktu Verifikasi</p>
+                        <p class="mt-3 text-2xl font-semibold text-slate-900 dark:text-slate-100">-63%</p>
+                        <p class="mt-2 text-xs text-slate-500 dark:text-slate-500">Pengurangan waktu verifikasi absensi manual.</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <section id="fitur" class="bg-gradient-to-br from-white via-white to-blue-50 py-20">
+    <section id="fitur" class="bg-gradient-to-br from-white via-white to-blue-50 py-20 dark:from-slate-950 dark:via-slate-950 dark:to-slate-900">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <h2 class="text-2xl font-semibold text-slate-900 sm:text-3xl">Fitur unggulan Presensia untuk seluruh organisasi</h2>
+            <h2 class="text-2xl font-semibold text-slate-900 dark:text-slate-100 sm:text-3xl">Fitur unggulan Presensia untuk seluruh organisasi</h2>
             <div class="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                <article class="rounded-3xl border border-slate-200 bg-white p-8 shadow-lg">
-                    <h3 class="text-lg font-semibold text-slate-900">Absensi QR Multi-Lokasi</h3>
-                    <p class="mt-3 text-sm text-slate-600">Buat, bagikan, dan rotasi QR unik per lokasi dengan validasi otomatis untuk menghindari spoofing.</p>
-                    <ul class="mt-4 space-y-2 text-xs text-slate-500">
+                <article class="rounded-3xl border border-slate-200 bg-white p-8 shadow-lg dark:border-slate-800 dark:bg-slate-900/70 dark:shadow-slate-900/40">
+                    <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-100">Absensi QR Multi-Lokasi</h3>
+                    <p class="mt-3 text-sm text-slate-600 dark:text-slate-300">Buat, bagikan, dan rotasi QR unik per lokasi dengan validasi otomatis untuk menghindari spoofing.</p>
+                    <ul class="mt-4 space-y-2 text-xs text-slate-500 dark:text-slate-400">
                         <li>• Penjadwalan reset QR otomatis</li>
                         <li>• Validasi geotag & radius</li>
                         <li>• Mode offline dengan sinkronisasi</li>
                     </ul>
                 </article>
-                <article class="rounded-3xl border border-slate-200 bg-white p-8 shadow-lg">
-                    <h3 class="text-lg font-semibold text-slate-900">Insight Kehadiran AI</h3>
-                    <p class="mt-3 text-sm text-slate-600">Analisa kecenderungan keterlambatan dan produktivitas tim dengan rekomendasi tindakan otomatis.</p>
-                    <ul class="mt-4 space-y-2 text-xs text-slate-500">
+                <article class="rounded-3xl border border-slate-200 bg-white p-8 shadow-lg dark:border-slate-800 dark:bg-slate-900/70 dark:shadow-slate-900/40">
+                    <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-100">Insight Kehadiran AI</h3>
+                    <p class="mt-3 text-sm text-slate-600 dark:text-slate-300">Analisa kecenderungan keterlambatan dan produktivitas tim dengan rekomendasi tindakan otomatis.</p>
+                    <ul class="mt-4 space-y-2 text-xs text-slate-500 dark:text-slate-400">
                         <li>• Segmentasi performa per divisi</li>
                         <li>• Peringatan absence tak wajar</li>
                         <li>• Laporan otomatis via email</li>
                     </ul>
                 </article>
-                <article class="rounded-3xl border border-slate-200 bg-white p-8 shadow-lg">
-                    <h3 class="text-lg font-semibold text-slate-900">Pengalaman Karyawan Modern</h3>
-                    <p class="mt-3 text-sm text-slate-600">Karyawan dapat melakukan check-in/out, mengajukan cuti, dan memantau saldo secara mobile.</p>
-                    <ul class="mt-4 space-y-2 text-xs text-slate-500">
+                <article class="rounded-3xl border border-slate-200 bg-white p-8 shadow-lg dark:border-slate-800 dark:bg-slate-900/70 dark:shadow-slate-900/40">
+                    <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-100">Pengalaman Karyawan Modern</h3>
+                    <p class="mt-3 text-sm text-slate-600 dark:text-slate-300">Karyawan dapat melakukan check-in/out, mengajukan cuti, dan memantau saldo secara mobile.</p>
+                    <ul class="mt-4 space-y-2 text-xs text-slate-500 dark:text-slate-400">
                         <li>• Riwayat absensi personal</li>
                         <li>• E-slip dan notifikasi real-time</li>
                         <li>• Dukungan multi-bahasa</li>
@@ -191,29 +191,29 @@
         </div>
     </section>
 
-    <section id="alur" class="bg-white py-20">
+    <section id="alur" class="bg-white py-20 dark:bg-slate-950">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <h2 class="text-2xl font-semibold text-slate-900 sm:text-3xl">Alur kerja end-to-end yang mulus</h2>
+            <h2 class="text-2xl font-semibold text-slate-900 dark:text-slate-100 sm:text-3xl">Alur kerja end-to-end yang mulus</h2>
             <div class="mt-12 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
-                <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
+                <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6 dark:border-slate-800 dark:bg-slate-900/60">
                     <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-blue-600 text-sm font-semibold text-white">1</span>
-                    <h3 class="mt-4 text-lg font-semibold text-slate-900">Generate QR</h3>
-                    <p class="mt-2 text-sm text-slate-600">Admin membuat QR tersinkronisasi lokasi dan waktu.</p>
+                    <h3 class="mt-4 text-lg font-semibold text-slate-900 dark:text-slate-100">Generate QR</h3>
+                    <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Admin membuat QR tersinkronisasi lokasi dan waktu.</p>
                 </div>
-                <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
+                <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6 dark:border-slate-800 dark:bg-slate-900/60">
                     <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-blue-600 text-sm font-semibold text-white">2</span>
-                    <h3 class="mt-4 text-lg font-semibold text-slate-900">Scan & Validasi</h3>
-                    <p class="mt-2 text-sm text-slate-600">Karyawan memindai via portal mobile, sistem validasi otomatis.</p>
+                    <h3 class="mt-4 text-lg font-semibold text-slate-900 dark:text-slate-100">Scan & Validasi</h3>
+                    <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Karyawan memindai via portal mobile, sistem validasi otomatis.</p>
                 </div>
-                <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
+                <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6 dark:border-slate-800 dark:bg-slate-900/60">
                     <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-blue-600 text-sm font-semibold text-white">3</span>
-                    <h3 class="mt-4 text-lg font-semibold text-slate-900">Insight & Tindakan</h3>
-                    <p class="mt-2 text-sm text-slate-600">Manager menerima insight keterlibatan real-time dan peringatan.</p>
+                    <h3 class="mt-4 text-lg font-semibold text-slate-900 dark:text-slate-100">Insight & Tindakan</h3>
+                    <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Manager menerima insight keterlibatan real-time dan peringatan.</p>
                 </div>
-                <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
+                <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6 dark:border-slate-800 dark:bg-slate-900/60">
                     <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-blue-600 text-sm font-semibold text-white">4</span>
-                    <h3 class="mt-4 text-lg font-semibold text-slate-900">Integrasi Payroll</h3>
-                    <p class="mt-2 text-sm text-slate-600">HR menghubungkan data absensi ke payroll dan HRIS.</p>
+                    <h3 class="mt-4 text-lg font-semibold text-slate-900 dark:text-slate-100">Integrasi Payroll</h3>
+                    <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">HR menghubungkan data absensi ke payroll dan HRIS.</p>
                 </div>
             </div>
         </div>
@@ -247,29 +247,29 @@
         </div>
     </section>
 
-    <section id="testimoni" class="bg-white py-20">
+    <section id="testimoni" class="bg-white py-20 dark:bg-slate-950">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <h2 class="text-2xl font-semibold text-slate-900 sm:text-3xl">Cerita sukses dari perusahaan inovatif</h2>
+            <h2 class="text-2xl font-semibold text-slate-900 dark:text-slate-100 sm:text-3xl">Cerita sukses dari perusahaan inovatif</h2>
             <div class="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                <div class="flex flex-col gap-4 rounded-3xl border border-slate-200 bg-slate-50 p-8">
-                    <p class="text-sm text-slate-600">“Presensia mempercepat proses absensi cabang kami yang tersebar, sekaligus memberikan insight keterlibatan yang kami butuhkan.”</p>
+                <div class="flex flex-col gap-4 rounded-3xl border border-slate-200 bg-slate-50 p-8 dark:border-slate-800 dark:bg-slate-900/60">
+                    <p class="text-sm text-slate-600 dark:text-slate-300">“Presensia mempercepat proses absensi cabang kami yang tersebar, sekaligus memberikan insight keterlibatan yang kami butuhkan.”</p>
                     <div>
-                        <p class="text-sm font-semibold text-slate-900">Raka Prasetya</p>
-                        <p class="text-xs text-slate-500">Head of HR, Nusantara Retail</p>
+                        <p class="text-sm font-semibold text-slate-900 dark:text-slate-100">Raka Prasetya</p>
+                        <p class="text-xs text-slate-500 dark:text-slate-500">Head of HR, Nusantara Retail</p>
                     </div>
                 </div>
-                <div class="flex flex-col gap-4 rounded-3xl border border-slate-200 bg-slate-50 p-8">
-                    <p class="text-sm text-slate-600">“Integrasi payroll otomatis membantu tim keuangan menyelesaikan penggajian 3x lebih cepat tanpa kesalahan data.”</p>
+                <div class="flex flex-col gap-4 rounded-3xl border border-slate-200 bg-slate-50 p-8 dark:border-slate-800 dark:bg-slate-900/60">
+                    <p class="text-sm text-slate-600 dark:text-slate-300">“Integrasi payroll otomatis membantu tim keuangan menyelesaikan penggajian 3x lebih cepat tanpa kesalahan data.”</p>
                     <div>
-                        <p class="text-sm font-semibold text-slate-900">Indah Lestari</p>
-                        <p class="text-xs text-slate-500">Finance Lead, Harmoni Clinic</p>
+                        <p class="text-sm font-semibold text-slate-900 dark:text-slate-100">Indah Lestari</p>
+                        <p class="text-xs text-slate-500 dark:text-slate-500">Finance Lead, Harmoni Clinic</p>
                     </div>
                 </div>
-                <div class="flex flex-col gap-4 rounded-3xl border border-slate-200 bg-slate-50 p-8">
-                    <p class="text-sm text-slate-600">“Dashboard untuk manager membuat pemantauan performa tim jauh lebih transparan dan berbasis data.”</p>
+                <div class="flex flex-col gap-4 rounded-3xl border border-slate-200 bg-slate-50 p-8 dark:border-slate-800 dark:bg-slate-900/60">
+                    <p class="text-sm text-slate-600 dark:text-slate-300">“Dashboard untuk manager membuat pemantauan performa tim jauh lebih transparan dan berbasis data.”</p>
                     <div>
-                        <p class="text-sm font-semibold text-slate-900">Bima Wicaksana</p>
-                        <p class="text-xs text-slate-500">Operations Manager, Orbit Logistics</p>
+                        <p class="text-sm font-semibold text-slate-900 dark:text-slate-100">Bima Wicaksana</p>
+                        <p class="text-xs text-slate-500 dark:text-slate-500">Operations Manager, Orbit Logistics</p>
                     </div>
                 </div>
             </div>

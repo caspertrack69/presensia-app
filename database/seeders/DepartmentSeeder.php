@@ -15,33 +15,54 @@ class DepartmentSeeder extends Seeder
     {
         $manager = User::where('role', 'manager')->first();
 
-        $hrDepartment = Department::firstOrCreate(
-            ['code' => 'HRD'],
+        $definitions = [
             [
+                'code' => 'HRD',
                 'name' => 'Human Resources',
-                'description' => 'Departemen yang mengelola kepegawaian dan absensi.',
+                'description' => 'Mengelola strategi personel, rekrutmen, dan kebijakan kepegawaian.',
                 'manager_id' => $manager?->id,
-                'is_active' => true,
-            ]
-        );
-
-        Department::firstOrCreate(
-            ['code' => 'FIN'],
+            ],
             [
-                'name' => 'Finance',
-                'description' => 'Departemen keuangan dan akuntansi.',
+                'code' => 'OPS',
+                'name' => 'Operations',
+                'description' => 'Mengawasi keberlangsungan operasional dan kepatuhan absensi harian.',
+                'manager_id' => $manager?->id,
+            ],
+            [
+                'code' => 'ITD',
+                'name' => 'Information Technology',
+                'description' => 'Mendukung infrastruktur teknologi dan keamanan sistem Presensia.',
                 'manager_id' => null,
-                'is_active' => true,
-            ]
-        );
+            ],
+            [
+                'code' => 'SAL',
+                'name' => 'Sales & Marketing',
+                'description' => 'Mengelola pipeline penjualan dan kampanye brand perusahaan.',
+                'manager_id' => null,
+            ],
+        ];
 
-        if ($manager && !$manager->department_id && $hrDepartment) {
-            $manager->update(['department_id' => $hrDepartment->id]);
+        $departments = collect();
+
+        foreach ($definitions as $definition) {
+            $departments[$definition['code']] = Department::updateOrCreate(
+                ['code' => $definition['code']],
+                [
+                    'name' => $definition['name'],
+                    'description' => $definition['description'],
+                    'manager_id' => $definition['manager_id'],
+                    'is_active' => true,
+                ]
+            );
         }
 
-        $employee = User::where('role', 'employee')->first();
-        if ($employee && !$employee->department_id && $hrDepartment) {
-            $employee->update(['department_id' => $hrDepartment->id]);
+        if ($manager && isset($departments['OPS']) && $manager->department_id !== $departments['OPS']->id) {
+            $manager->update(['department_id' => $departments['OPS']->id]);
+        }
+
+        $employee = User::where('email', 'employee@presensia.com')->first();
+        if ($employee && isset($departments['OPS']) && $employee->department_id !== $departments['OPS']->id) {
+            $employee->update(['department_id' => $departments['OPS']->id]);
         }
     }
 }

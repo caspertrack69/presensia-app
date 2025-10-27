@@ -12,7 +12,7 @@
             </p>
         </div>
 
-        <div class="rounded-2xl bg-white shadow-soft">
+        <div class="rounded-2xl border border-slate-200 bg-white shadow-soft dark:border-slate-800 dark:bg-slate-900/80">
             <div class="overflow-hidden rounded-t-2xl bg-slate-950">
                 <div class="relative aspect-square">
                     <video
@@ -68,17 +68,17 @@
 
             <div class="space-y-4 p-6">
                 <div class="flex flex-col gap-3 md:flex-row">
-                    <x-ui.button class="flex-1" @click="processCheckIn()" :disabled="!qrData || loading">
+                    <x-ui.button class="flex-1" @click="processCheckIn()" x-bind:disabled="!qrData || loading">
                         Check-in
                     </x-ui.button>
-                    <x-ui.button class="flex-1" variant="secondary" @click="processCheckOut()" :disabled="!qrData || loading">
+                    <x-ui.button class="flex-1" variant="secondary" @click="processCheckOut()" x-bind:disabled="!qrData || loading">
                         Check-out
                     </x-ui.button>
                 </div>
 
-                <div class="rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-600">
-                    <p class="font-medium text-slate-700">Informasi Penting:</p>
-                    <ul class="mt-2 list-disc space-y-1 pl-5">
+                <div class="rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-600 dark:border-slate-700 dark:bg-slate-900/60 dark:text-slate-300">
+                    <p class="font-medium text-slate-700 dark:text-slate-200">Informasi Penting:</p>
+                    <ul class="mt-2 list-disc space-y-1 pl-5 text-slate-600 dark:text-slate-300">
                         <li>Pastikan kamera perangkat aktif dan diarahkan ke QR Code terbaru.</li>
                         <li>Setelah QR tervalidasi, sistem akan mengambil foto selfie otomatis.</li>
                         <li>Aktifkan layanan lokasi untuk memverifikasi posisi Anda.</li>

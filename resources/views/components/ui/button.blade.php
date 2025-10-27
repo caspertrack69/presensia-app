@@ -6,13 +6,13 @@
 ])
 
 @php
-$base = 'inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-60';
+$base = 'inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-100 dark:focus-visible:ring-offset-slate-900 disabled:pointer-events-none disabled:opacity-60';
 $variants = [
-    'primary' => 'bg-primary-600 text-white hover:bg-primary-700 focus-visible:ring-primary-500',
-    'secondary' => 'bg-slate-900 text-white hover:bg-slate-700 focus-visible:ring-slate-400',
-    'outline' => 'border border-slate-200 bg-white text-slate-900 hover:bg-slate-50 focus-visible:ring-slate-200',
-    'ghost' => 'text-slate-700 hover:bg-slate-100 focus-visible:ring-slate-200',
-    'destructive' => 'bg-red-600 text-white hover:bg-red-700 focus-visible:ring-red-500',
+    'primary' => 'bg-blue-600 text-white hover:bg-blue-700 focus-visible:ring-blue-500 dark:bg-blue-500 dark:text-slate-950 dark:hover:bg-blue-400 dark:focus-visible:ring-blue-300',
+    'secondary' => 'bg-slate-900 text-white hover:bg-slate-700 focus-visible:ring-slate-400 dark:bg-slate-200 dark:text-slate-900 dark:hover:bg-slate-100 dark:focus-visible:ring-slate-300',
+    'outline' => 'border border-slate-200 bg-white text-slate-900 hover:bg-slate-100 focus-visible:ring-slate-200 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:hover:bg-slate-800 dark:focus-visible:ring-slate-600',
+    'ghost' => 'text-slate-700 hover:bg-slate-100 focus-visible:ring-slate-200 dark:text-slate-200 dark:hover:bg-slate-800 dark:focus-visible:ring-slate-700',
+    'destructive' => 'bg-red-600 text-white hover:bg-red-700 focus-visible:ring-red-500 dark:bg-rose-500 dark:text-white dark:hover:bg-rose-600 dark:focus-visible:ring-rose-400',
 ];
 $sizes = [
     'sm' => 'h-9 px-3',
