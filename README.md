@@ -1,66 +1,68 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Presensia – QR Attendance Platform
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Presensia is a Laravel-based attendance platform that blends Dynamic QR codes, selfie validation, and geofencing into a sleek glassmorphism interface. Employees, managers, and admins get tailored dashboards while the theming system keeps the experience cohesive in both light and dark modes.
 
-## About Laravel
+## What's New (2025-10-27)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- Introduced a glass-inspired login hero and form, complete with backdrop blur, layered highlights, and route-safe CTAs.
+- Enabled class-based dark mode in Tailwind and standardised `color-scheme` tokens for consistent native theming.
+- Moved QR scanner behaviour into `resources/js/modules/qr-scanner.js`, centralising camera lifecycle, ZXing parsing, and attendance submission flows.
+- Refined the employee attendance history view with dark-ready tables, responsive stacking, and improved pagination layout.
+- Rebuilt the sidebar into a compact glass panel with refreshed active states, indicators, and theme/logout controls.
+- Added guards around optional authentication routes so instances without password reset or self-registration do not fail.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Core Features
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- Dynamic QR generation with expiry safeguards.
+- Offline-aware QR scanning that resumes when connectivity returns.
+- Selfie capture and geolocation checks for reliable attendance validation.
+- Role-driven dashboards for employees, managers, and admins.
+- Theme switcher with persistent preference and seamless dark/light palettes.
 
-## Learning Laravel
+## Tech Stack
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- **Framework:** Laravel 10+
+- **Frontend:** Blade, Tailwind CSS, Alpine.js
+- **Build Tool:** Vite
+- **QR Scanner:** ZXing (`@zxing/library`)
+- **Database:** MySQL (configurable)
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Getting Started
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+```bash
+# Install dependencies
+composer install
+npm install
 
-## Laravel Sponsors
+# Environment bootstrap
+cp .env.example .env
+php artisan key:generate
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+# Database migrations & seed data
+php artisan migrate:fresh --seed
 
-### Premium Partners
+# Serve application & assets
+php artisan serve
+npm run dev
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+Default seeded accounts can be found in `SETUP_GUIDE.md` along with environment notes and troubleshooting tips.
 
-## Contributing
+## Development Scripts
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+| Command          | Description                                   |
+|------------------|-----------------------------------------------|
+| `npm run dev`    | Vite dev server with HMR                      |
+| `npm run build`  | Production asset build                        |
+| `php artisan serve` | Laravel HTTP server                        |
+| `php artisan test`  | Run feature/unit test suite                |
 
-## Code of Conduct
+## Documentation & Support
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+- **Setup Guide:** `SETUP_GUIDE.md`
+- **Changelog:** `CHANGELOG.md`
+- **Issue Tracking:** Use GitHub Issues or your team’s tracker.
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This project is proprietary software. All rights reserved.

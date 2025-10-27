@@ -2,6 +2,16 @@
 
 Platform absensi berbasis QR Code yang modern, aman, dan efisien dengan fitur Dynamic QR, Selfie Validation, dan Geolocation Verification.
 
+## Pembaruan Terbaru (27 Oktober 2025)
+
+- Antarmuka login diperbarui dengan style glassmorphism lengkap dengan blur, highlight, dan tombol CTA responsif.
+- Sidebar dan komponen UI dikompakkan agar tampil konsisten pada mode terang & gelap.
+- Modul pemindaian QR dipindahkan ke `resources/js/modules/qr-scanner.js`, memastikan ZXing dan lifecycle kamera dikelola di satu tempat.
+- Penggunaan Tailwind beralih ke `darkMode: 'class'` dan ditambahkan `color-scheme` agar warna native browser selaras dengan tema.
+- Link `password.request` dan `register` kini opsional, hanya tampil bila rute tersedia.
+
+> Setelah menarik perubahan terbaru, jalankan `npm run dev` atau `npm run build` ulang agar Vite memproses utilitas Tailwind yang baru.
+
 ## Fitur Utama
 
 ### 🔐 Keamanan
