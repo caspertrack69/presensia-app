@@ -1,4 +1,4 @@
-import { BrowserMultiFormatReader } from '@zxing/library';
+import { BrowserMultiFormatReader, NotFoundException } from '@zxing/library';
 
 const defaultConfig = {
     verifyUrl: null,
@@ -77,7 +77,7 @@ document.addEventListener('alpine:init', () => {
                     this.handleScanResult(result.getText());
                 }
 
-                if (error && error.name !== 'NotFoundException') {
+                if (error && !(error instanceof NotFoundException) && !String(error?.name).includes('NotFoundException')) {
                     console.error('Decode error:', error);
                 }
             });
